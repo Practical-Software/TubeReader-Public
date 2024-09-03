@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Articles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5d0479de92.js" crossorigin="anonymous"></script>
+  
+    <!--G-FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.js' integrity='sha512-21fQaahBgF61RYRptthBohJcYCJ/X+tYnxWwv38/f9q/LP22y/vSvI1hwC3zffq+xmtpj7cWCX3PunE+gnFeOQ==' crossorigin='anonymous'></script>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+            background-color:hsl(252, 63%, 95%);
+        }
+
+        #root {
+            background-color:hsl(252, 63%, 95%);
+        }
+        .raleway {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        .raleway-bold {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .roboto-light {
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .roboto-regular {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .roboto-medium {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .roboto-bold {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .custom-list-item {
+          font-size: 1.4rem;
+          transition: transform 0.2s;
+        }
+        .custom-list-item:hover {
+          transform: scale(1.036);
+        }
+    
+      </style>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-primary" style="background-color: #5D3FD3;">
+        <div class="container-fluid d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+            <div id="hamburger" class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <i class="fa-solid fa-bars text-white"></i>
+            </div>
+            <a class="navbar-brand text-white ms-3" href="https://www.tubereader.practicalsoftware.com/">
+                <strong>TubeReader</strong>
+            </a>
+            <a id="about-btn" class="nav-link text-white ms-4" style="font-size: 1.1em;" href="https://www.tubereader.practicalsoftware.com/about/">About</a>
+            <a id="explore-btn" class="nav-link text-white ms-5" style="font-size: 1.1em;" href="https://www.tubereader.practicalsoftware.com/explore/">Explore</a>
+            <a id="pricing-btn" class="nav-link text-white ms-5" style="font-size: 1.1em;" href="https://www.tubereader.practicalsoftware.com/pricing/">Pricing</a>
+            </div>
+    
+            <div id="nav-ls" class="d-flex align-items-center">
+    
+            <a id="login-btn" href="https://www.tubereader.practicalsoftware.com/login/">
+                <button class="btn btn-outline-light me-3" style="font-size: 1.1em;">
+                    Login
+                </button>
+            </a>
+    
+            <a id="signup-btn" href="https://www.tubereader.practicalsoftware.com/register/">
+                <button class="btn btn-outline-light me-3" style="font-size: 1.1em;">
+                    Sign-Up
+                </button>
+            </a>
+    
+            <div class="dropdown ms-2">
+                <button class="btn dropdown-toggle text-white" style="background-color: #5D3FD3;" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <p id="username" style="display: inline;"></p>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="https://www.tubereader.practicalsoftware.com/dashboard/" style="font-size: 1.1em;">Dashboard</a></li>
+                <li><a id="logOutButton" class="dropdown-item" href="#" style="font-size: 1.1em;">Logout</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+    <div class="offcanvas offcanvas-start offcanvas-width-custom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li id="off-home" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/">Home</a>
+                <hr>
+              </li>
+              <li id="off-profile" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/profile/">Profile</a>
+                <hr>
+              </li>
+              <li id="off-dashboard" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/dashboard/">Dashboard</a>
+                <hr>
+              </li>
+              <li id="off-generate" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/generate/">Generate</a>
+                <hr>
+              </li>
+              <li id="off-about" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/about/">About</a>
+                <hr>
+              </li>
+              <li id="off-explore" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/explore/">Explore</a>
+                <hr>
+              </li>
+              <li id="off-pricing" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/pricing/">Pricing</a>
+                <hr>
+              </li>
+              <li id="off-login" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/login/">Login</a>
+                <hr>
+              </li>
+              <li id="off-signup" class="nav-item">
+                <a class="nav-link custom-list-item" href="https://www.tubereader.practicalsoftware.com/register/">Sign-Up!</a>
+              </li>
+              <li id="off-logout" class="nav-item">
+                <a class="nav-link custom-list-item" href="#">Logout</a>
+              </li>
+        </ul>
+      </div>
+    </div>
+    <div class="raleway" id="root"></div>
+    </main>
+
+    <footer class="bg-dark text-light text-center py-3 raleway" style="display: absolute; bottom: 0" loading="lazy">
+        <div class="container d-flex justify-content-around flex-wrap align-items-center ">
+            <span style="font-size: 1.3em;">
+                &copy; 2024 <a href="https://www.practicalsoftware.com/" class="text-light" style="text-decoration: none;">
+                    Practical Software
+                </a>
+            </span>
+            <span>
+                <a href="https://www.tubereader.practicalsoftware.com/faq/" class="text-light" style="text-decoration: none;">
+                    F.A.Q.
+                </a>
+            </span>
+            <span>
+                <a href="https://www.tubereader.practicalsoftware.com/terms-of-service/" class="text-light" style="text-decoration: none;">
+                    Terms of Service
+                </a>
+            </span>
+            <span>
+                <a href="https://www.tubereader.practicalsoftware.com/chocolate-chip-cookies/" class="text-light" style="text-decoration: none;">
+                    Cookie Policy
+                </a>
+            </span>
+    
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+        $(document).ready(function() {
+          var auth = false;
+          var username = "";
+      
+          function updateNavDisplay() {
+            //console.log("size: "+window.innerWidth);
+            if (window.innerWidth < 884) {
+              $("#hamburger").show();
+              $('#nav-ls').hide();
+              if (auth) { // AUTHORIZED
+                $("#off-login").hide();
+                $("#off-signup").hide();
+                $("#off-profile").show();
+                $("#off-logout").show();
+                $('#profileDropdown').hide();
+                $("#off-generate").show();
+                $("#off-dashboard").show();
+              } else { // NOT AUTHORIZED
+                $("#off-login").show();
+                $("#off-signup").show();
+                $("#off-profile").hide();
+                $("#off-logout").hide();
+                $("#login-btn").hide();
+                $("#signup-btn").hide();
+                $("#off-generate").hide();
+                $("#off-dashboard").hide();
+                $('#profileDropdown').hide();
+              }
+            } else {
+              if (auth) { // AUTHORIZED
+                $("#hamburger").show();
+                $('#profileDropdown').show();
+                $('#nav-ls').show();
+                $("#login-btn").hide();
+                $("#signup-btn").hide();
+                $("#off-generate").show();
+                $("#off-dashboard").show();
+              } else { // NOT AUTHORIZED
+                $("#hamburger").hide();
+                $('#nav-ls').show();
+                $("#login-btn").show();
+                $("#signup-btn").show();
+                $('#profileDropdown').hide();
+                $("#off-generate").hide();
+                $("#off-dashboard").hide();
+              }
+              $("#off-login").hide();
+              $("#off-signup").hide();
+              $("#off-profile").hide();
+              $("#off-logout").hide();
+            }
+      
+            if (window.innerWidth < 680) {
+              $("#about-btn").hide();
+              $("#explore-btn").hide();
+              $("#pricing-btn").hide();
+              $("#off-about").show();
+              $("#off-explore").show();
+              $("#off-pricing").show();
+            } else {
+              $("#about-btn").show();
+              $("#explore-btn").show();
+              $("#pricing-btn").show();
+              $("#off-about").hide();
+              $("#off-explore").hide();
+              $("#off-pricing").hide();
+            }
+          }
+        /*
+        $.ajax({
+            url: 'https://www.tubereader.practicalsoftware.com/php/check-auth-restricted.php',
+            method: 'POST',
+            success: function(response) {
+              auth = true;
+              username = response;
+              $("#username").text(username);
+              updateNavDisplay();
+            },
+            error: function(xhr, status, error) {
+              window.location.href = "https://www.tubereader.practicalsoftware.com/login/";
+              console.error('Error:', error);
+              updateNavDisplay();
+            }
+          });
+          */
+          /*$.ajax({
+            url: 'https://www.tubereader.practicalsoftware.com/php/check-auth.php',
+            method: 'POST',
+            success: function(response) {
+              auth = true;
+              username = response;
+              $("#username").text(username);
+              updateNavDisplay();
+            },
+            error: function(xhr, status, error) {
+              console.error('Error:', error);
+              updateNavDisplay();
+            }
+          });*/
+      
+          $("#logOutButton").click(function() {
+            $.ajax({
+              url: 'https://www.tubereader.practicalsoftware.com/php/logout.php',
+              method: 'POST',
+              xhrFields: {
+                withCredentials: true,
+              },
+              success: function(response) {
+                var cookies = document.cookie.split(";");
+                // Loop through cookies and delete each one
+                for (var i = 0; i < cookies.length; i++) {
+                  var cookie = cookies[i];
+                  var eqPos = cookie.indexOf("=");
+                  var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                  document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+                }
+                window.location.reload();
+              }
+            });
+          });
+      
+          updateNavDisplay();
+          $(window).resize(updateNavDisplay);
+        });
+      </script>
+      
+  </body>
+</html>
