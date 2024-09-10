@@ -279,7 +279,7 @@
               $("#off-pricing").hide();
             }
           }
-        /*
+        
         $.ajax({
             url: 'https://www.tubereader.practicalsoftware.com/php/check-auth-restricted.php',
             method: 'POST',
@@ -295,21 +295,6 @@
               updateNavDisplay();
             }
           });
-          */
-          /*$.ajax({
-            url: 'https://www.tubereader.practicalsoftware.com/php/check-auth.php',
-            method: 'POST',
-            success: function(response) {
-              auth = true;
-              username = response;
-              $("#username").text(username);
-              updateNavDisplay();
-            },
-            error: function(xhr, status, error) {
-              console.error('Error:', error);
-              updateNavDisplay();
-            }
-          });*/
       
           $("#logOutButton").click(function() {
             $.ajax({
